@@ -1,117 +1,295 @@
-/*Javascriptpro_*/
-/*Dont forget to follow me on github,instagram and codepen.*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
-margin:0;  
-padding:0;
-box-sizing:border-box;
-} 
+    margin:0;    
+    padding:0;
+    box-sizing:border-box;
+}   
 
 body{
-background:#081236;
-font-family: 'poppins', sans-serif;
+    background:#0c0015; 
+    font-family: 'poppins', sans-serif;
 }
-.header-image {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+
 .container{
-padding:25px;  
-width:360px;
-background:rgb(230, 224, 224);
-border-radius:7px;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-transition:all 1s;
+    padding:25px;     
+    width:400px;
+    background:#FFFFFF;
+    border-radius:6px;
+    position:absolute;
+    top:60%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:400px;
+    overflow:hidden;
 }
 
-.container h4{
-font-size:13.5px;
-font-weight:400;
-text-align:center;
-margin-top:8px;
+.container .music-info{
+    height:100px; 
+    width:100%;
+    background:rgba(84,103,255,0.2);
+    position:absolute;
+    top:0;
+    left:0;
+    padding:23px;
+    padding-left:170px;
+    font-size:14.5px;
+    text-transform:capitalize;
 }
 
-.container .user-input-box{
-height:55px; 
-width:100%;
-margin-top:20px;
-display:flex;
-align-items:center;
+.container .music-info h4{
+    font-weight:500;
+    margin-top:6px;
+    color:dimgrey;
+    white-space:nowrap;
 }
 
-.container .user-input-box input{
-all:unset;  
-height:40px;
-width:135px;
-padding:5px;
-border:1px solid grey;
-border-radius:7px;
-padding-left:15px;
-font-size:16px;
+.container .music-info h4 span{
+    color:#7102f8;        
 }
 
-.container .user-input-box button{
-all:unset; 
-height:50px;
-margin-left:10px;
-width:140px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-background:#0037ff;
-border-radius:5px;
+.container .img-box{
+    height:110px;   
+    width:110px;
+    border-radius:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:white;
+    z-index:1;
+    position:absolute;
+    margin-top:23px;
 }
 
-.container p{
-text-align:center;
-font-size:13px;
-margin-top:9px;
+.container .img-box img{
+    height:100px;  
+    width:100px;
+    border-radius:100%;
 }
 
-.container .guess-low-high{
-margin-top:22px;        
-display:none;
+.container .btns-box{
+    height:70px;    
+    width:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    right:20px;
+    margin-top:80px;
 }
 
-.container .no-of-chances{
-margin-top:25px;        
+.container .btns-box button{
+    all:unset;  
+    height:35px;
+    width:35px;
+    border-radius:100%;
+    border:1px solid #5467FF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    float:left;
+    margin-left:14px;
+    color:#5467FF;
+    cursor:pointer;
+    position:relative;
+    left:-5px;
+    font-size:13px;
 }
 
-.result-box{
-padding:20px;   
-width:360px;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-border-radius:7px;
-background:white;
-display:none;
+.container .btns-box .play-pause-btn{
+    background:#5467FF;   
+    color:white;
+    height:45px;
+    width:45px;
+    font-size:15px;
 }
 
-.result-box h3{
-text-align:center;
-font-size:20px;
-margin-top:3px;
+.container .waveform-box{
+    position:absolute;   
+    top:195px;
+    padding:20px;
+    height:100px;
+    display:flex;
+    align-items:center;
+    margin-left:-2px;
 }
 
-.result-box .play-again-btn{
-all:unset; 
-height:35px;
-width:130px;
-background:#7289DA;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-border-radius:5px;
-margin:auto;
-margin-top:12px;
-font-size:12px;
-cursor:pointer;
+.container .waveform-box .current-time{
+    position:relative;      
+    left:-10px;
+    font-size:13px;
+    color:#480483;
+}
+
+.container .waveform-box .total-time{
+    position:relative; 
+    left:10px;
+    font-size:13px;
+    color:#31456A;
+}
+
+.container .waveform-box #waveform{
+    height:92px;  
+    width:235px;
+}
+
+.rotate{
+    animation:animate 8s linear infinite;       
+}
+
+@keyframes animate{
+    0%{
+        transform:rotate(0deg);     
+    }
+    100%{
+        transform:rotate(360deg);     
+    }       
+}
+
+.container .volume-box{
+    height:60px;  
+    width:300px;
+    padding:20px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    bottom:20px;
+    padding-right:0px;
+    margin-left:15px;
+}
+
+.container .volume-box .volume-icon{
+    font-size:20px;
+    color:#31456A;
+    position:relative;
+    left:-25px;
+    cursor:pointer;
+}
+
+.container .volume-box .volume-btn{
+    height:18px;  
+    width:18px;
+    border-radius:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:9px;
+    cursor:pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor:pointer;
+    position:relative;
+    left:-14px;
+    background:rgba(84,103,255,0.2);
+}
+
+.container .volume-box .volume-incre{
+    margin-left:22px;       
+}
+
+.container .volume-box input{
+    all:unset;
+    height:3px;
+    width:130px;
+    background:lightgrey;
+    margin-left:-6px;
+    cursor:pointer;
+}
+
+.container .volume-box input::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height:10px;
+    width:10px;
+    background:#5467FF;
+    border-radius:100%;
+    cursor:pointer;
+}
+
+::selection {
+    background: rgb(100, 149, 237, 0.8);
+    color: white;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .container .music-info {
+        padding-left: 140px;
+        font-size: 13px;
+    }
+
+    .container .music-info h4 {
+        font-size: 14px;
+    }
+
+    .container .img-box {
+        height: 90px;
+        width: 90px;
+        margin-top: 15px;
+    }
+
+    .container .img-box img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .container .btns-box {
+        width: 180px;
+        margin-top: 70px;
+    }
+
+    .container .btns-box button {
+        height: 30px;
+        width: 30px;
+        font-size: 12px;
+    }
+
+    .container .btns-box .play-pause-btn {
+        height: 40px;
+        width: 40px;
+        font-size: 14px;
+    }
+
+    .container .waveform-box {
+        top: 180px;
+        padding: 15px;
+        height: auto;
+    }
+
+    .container .waveform-box .current-time,
+    .container .waveform-box .total-time {
+        font-size: 12px;
+    }
+
+    .container .waveform-box #waveform {
+        height: 80px;
+        width: 200px;
+    }
+
+    .container .volume-box {
+        width: 90%;
+        bottom: 10px;
+        margin-left: 0;
+    }
+
+    .container .volume-box .volume-icon {
+        left: -20px;
+    }
+
+    .container .volume-box .volume-btn {
+        left: -10px;
+    }
+
+    .container .volume-box input {
+        width: 100px;
+        margin-left: -4px;
+    }
 }
