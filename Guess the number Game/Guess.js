@@ -1,5 +1,4 @@
-//Javascriptpro_
-//Dont forget to follow me on github,instagram and codepen
+
 let container = document.querySelector('.container');
 let userInput = document.querySelector('.container .user-input-box input');
 let guessBtn = document.querySelector('.container .user-input-box button');
